@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Kilroy</title>
+  <meta name="description" content="Kilroy father of memes">
+
+  <link rel="icon" href="favicons/2483-img-logo.png">
+
+  <link rel="stylesheet" href="css/css-swiper.css">
+  <link rel="stylesheet" href="css/css-style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+        .button {
+      display: inline-block;
+     border: 2px solid #000000;
+    padding: 15px 30px;
+      background-color: #ff6f00;
+      color: #000000;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(255, 111, 0, 0.5);
+      cursor: pointer;
+      text-decoration: none;
+      transition: box-shadow 0.3s;
+      z-index: 1;
+    }
+
+    .button:hover {
+      box-shadow: 0 0 20px rgba(255, 111, 0, 0.7);
+    }
+
+       .image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  justify-items: center;
+}
+
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: 600px; /* Specify the desired width */
+  height: 650px; /* Specify the desired height */
+  border: 8px solid #000;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .image-container:hover .image-overlay {
+      opacity: 1;
+    }
+    canvas {
+      border: 8px solid white;
+      background-color: black;
+    }
+    .chart-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      width: 80vw;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+
+    </head>
+
+<body>
+  <div id="root">
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <div class="logo header__logo">
+            <div class="logo__link">
+              <a href="#"><img src="images/img-logo.png" alt="logo" width="56" height="56" class="logo__img"></a>
+            </div>
+          </div>
+          <nav class="header__nav">
+            <div class="header__nav-inner">
+              <ul class="menu-list header__menu-list">
+                <li class="menu-list__item">
+                  <a href="#com" class="menu-list__link">Community</a>
+                </li>
+                <li class="menu-list__item">
+                  <a href="whitepaper.pdf" class="menu-list__link">Whitepaper</a>
+                </li>
+              </ul>
+              <div class="header__btns">
+                <div class="header__sm-info">
+                  <a href="https://coinmarketcap.com/currencies/dogelon/" target="_blank">$
+                  <span id="priceHeader">0.000000000</span></a></div>
+              </div>
+            </div>
+          </nav>
+          <button class="burger-btn header__burger-btn">
+            <span class="burger-btn__inner">
+              <span class="burger-btn__stick"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+    </header>
+
+    <main class="main">
+      <div class="main-screen" >
+        <div class="container">
+          <div class="main-screen__inner">
+            <img src="images/main-screen-title-img.png" alt="img" width="1023" height="183" class="main-screen__title-img">
+
+            <img src="images/main-screen-main.png" alt="img" width="513" height="685" class="main-screen__main-img">
+            <button class="button">BUY KILROY</button>
+            
+          </div>
+
+        </div>
+
+      </div>
+           
+
+      <div class="b-2-b">
+        <div class="big-info">
+          <div class="container">
+            <div class="big-info__inner">
+              <div class="big-info__text-box">
+                <div class="heading big-info__heading">At Kilroy, we are the unrivaled Father of all memes.</div>
+                <div class="links-list big-info__links-list">
+                  <a target="_blank" href="https://t.me/dogelonmars" class="links-list__link">
+                    <img src="images/list-links-tg.svg" alt="img" width="40" height="40" class="links-list__icon">
+                  </a>
+                  <a target="_blank" href="https://twitter.com/dogelonmars" class="links-list__link">
+                    <img src="images/list-links-tw.svg" alt="img" width="40" height="40" class="links-list__icon">
+                  </a>
+                  <a target="_blank" href="https://coinmarketcap.com/currencies/dogelon/" class="links-list__link">
+                    <img src="images/list-links-03.svg" alt="img" width="40" height="40" class="links-list__icon">
+                  </a>
+                  <a target="_blank" href="https://www.coingecko.com/en/coins/dogelon-mars" class="links-list__link">
+                    <img src="images/list-links-coingecko.png" alt="img" width="40" height="40" class="links-list__icon">
+                  </a>
+                  <a target="_blank" href="https://app.uniswap.org/#/swap?inputCurrency=eth&amp;outputCurrency=0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3" class="links-list__link">
+                    <img src="images/list-links-uniswap.svg" alt="img" width="40" height="40" class="links-list__icon">
+                  </a>
+                  <a target="_blank" href="https://etherscan.io/token/0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3" class="links-list__link">
+                    <img src="images/list-links-traced.svg" alt="img" width="40" height="40" class="links-list__icon">
+                  </a>
+                </div>
+              </div>
+              <img src="images/big-info-rocket.png" alt="img" width="395" height="361" class="big-info__img">
+            </div>
+          </div>
+        </div>
+        <div class="join-the-community" id="com">
+          <div class="container">
+            <div class="join-the-community__inner grid-12">
+              <div class="heading--decorator heading join-the-community__heading">Join the Community!</div>
+              <div class="join-the-community__items grid-12">
+                <div class="grid-12 join-the-community__item join-the-community__item--twiter">
+                  <div class="join-the-community__header">
+                    <span class="join-the-community__header-name">KILROY</span>
+                    <span class="join-the-community__header-name-socmedia">Twitter</span>
+                    <span class="join-the-community__header-cheked"><img src="images/img-checked.png" alt="" class="join-the-community__header-checked-img"></span>
+                  </div>
+                  <div class="join-the-community__nick-name">@DogelonMars</div>
+                  <div class="join-the-community__title">I am Kilroy. Father of memes. Join me and together we will reach
+                    the stars...</div>
+                  <div class="join-the-community__follow">
+                    <span class="follow__amount">650K+</span>
+                    <span class="follow__followers">followers</span>
+                    <div class="follow__bttn">
+                       <button class="button">Follow</button>
+                    </div>
+                  </div>
+                  <div class="join-the-community__socmedia-img-wrap">
+                    <img src="images/img-tw.png" class="join-the-community__socmedia-img join-the-community__socmedia-img--twiter" alt="">
+                  </div>
+                </div>
+                <div class="grid-12 join-the-community__item join-the-community__item--telegram">
+                  <div class="join-the-community__header">
+                    <span class="join-the-community__header-name">Dogelon Mars</span>
+                    <span class="join-the-community__header-name-socmedia">Telegram</span>
+                    <span class="join-the-community__header-cheked"><img src="images/img-checked.png" alt="" class="join-the-community__header-checked-img"></span>
+                  </div>
+                  <div class="join-the-community__nick-name">https://t.me/DogelonMars</div>
+                  <div class="join-the-community__title">I am Kilroy. Father of memes. Join me and together we will reach
+                    the stars...</div>
+                  <div class="join-the-community__follow">
+                    <span class="follow__amount">90K+</span>
+                    <span class="follow__followers">followers</span>
+                    <div class="follow__bttn">
+                       <button class="button">Follow</button>
+                    </div>
+                  </div>
+                  <div class="join-the-community__socmedia-img-wrap">
+                    <img src="images/img-tg.png" class="join-the-community__socmedia-img join-the-community__socmedia-img--telegram" alt="">
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="b-2-b">
+        <img src="news.png" alt="Your Image">
+        <div class="image-grid">
+    <div class="image-container">
+      <img src="1.jpeg" alt="Image 1">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="2.jpeg" alt="Image 2">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="3.jpeg" alt="Image 3">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="4.jpeg" alt="Image 3">
+      <div class="image-overlay"></div>
+    </div>
+
+      </div>
+
+            <div class="b-2-b">
+        <img src="tokenomics.png" alt="Your Image">
+
+
+        <div align="center">
+          <h1>Total Supply: 1,000,000 Tokens</h1>
+          <br>
+          <div class="chart-container">
+    <canvas id="pieChart"></canvas>
+  </div>
+
+  <div class="chart-container" style="margin-top: 50px;">
+    <canvas id="barChart"></canvas>
+  </div>
+</div>
+       <script>
+    // Token Distribution
+    const liquidity = 80;
+    const stakingRewards = 10;
+    const partnerships = 10;
+
+    // Create the pie chart
+    const pieData = {
+      labels: ['Liquidity', 'Staking and Rewards', 'Partnerships'],
+      datasets: [{
+        data: [liquidity, stakingRewards, partnerships],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+      }],
+    };
+
+    const pieOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const label = context.label || '';
+              const value = context.raw || '';
+              return `${label}: ${value}%`;
+            }
+          }
+        }
+      }
+    };
+
+    const pieChart = new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: pieData,
+      options: pieOptions,
+    });
+
+    // Token Release
+    const vestingLockup = 100 - liquidity;
+
+    // Create the bar chart
+    const barData = {
+      labels: ['Liquidity', 'Vesting and Lock-up'],
+      datasets: [{
+        data: [liquidity, vestingLockup],
+        backgroundColor: ['#FF6384', '#36A2EB'],
+      }],
+    };
+
+    const barOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    };
+
+    const barChart = new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: barData,
+      options: barOptions,
+    });
+  </script>
+      </div>
+
+            <div class="b-2-b">
+        <div class="image-grid">
+    <div class="image-container">
+      <img src="11.png" alt="Image 1">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="12.jpeg" alt="Image 2">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="13.jpeg" alt="Image 3">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="14.jpeg" alt="Image 3">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="15.jpeg" alt="Image 3">
+      <div class="image-overlay"></div>
+    </div>
+    <div class="image-container">
+      <img src="16.png" alt="Image 3">
+      <div class="image-overlay"></div>
+    </div>
+
+      </div>
+     
+            <div class="b-2-b">
+        <img src="buy.png" alt="Your Image">
+               <div class="container">
+          <div class="guide__inner grid-12">
+            <div class="heading heading--decorator guide__heading">Quick Start Guide</div>
+
+            <div class="guide__items grid-12">
+              <div class="guide__item guide__item--one">
+                <div class="guide-item__number">01</div>
+                <div class="guide-item__img-wrap">
+                  <img src="images/img-guide1.png" alt="" class="guide-item__img guide-item__img--one">
+                </div>
+                <div class="guide-item__heading">Create MetaMask wallet</div>
+                <div class="guide-item__text">Create a MetaMask Wallet using either a desktop computer or an
+                  iOS/Android
+                  mobile device. That will allow you to buy, sell, send, and receive ELON</div>
+              </div>
+
+              <div class="guide__item guide__item--two">
+                <div class="guide-item__number">02</div>
+                <div class="guide-item__img-wrap">
+                  <img src="images/img-guide2.png" alt="" class="guide-item__img guide-item__img--two">
+                </div>
+                <div class="guide-item__heading">Send ETH to your wallet</div>
+                <div class="guide-item__text">You can buy Ethereum (ETH) directly on MetaMask or transfer it to your
+                  MetaMask Wallet from exchanges like Coinbase, Binance, etc.</div>
+              </div>
+
+              <div class="guide__item guide__item--three">
+                <div class="guide-item__number">03</div>
+                <div class="guide-item__img-wrap">
+                  <img src="images/img-guide3.png" alt="" class="guide-item__img guide-item__img--three">
+                </div>
+                <div class="guide-item__heading">Connect your wallet</div>
+                <div class="guide-item__text">Access your wallet by clicking &lsquo;Connect to a wallet&rsquo; and selecting
+                  MetaMask.</div>
+              </div>
+
+              <div class="guide__item guide__item--four">
+                <div class="guide-item__number">04</div>
+                <div class="guide-item__img-wrap">
+                  <img src="images/img-guide4.png" alt="" class="guide-item__img guide-item__img--four">
+                </div>
+                <div class="guide-item__heading">Swap ETH for ELON</div>
+                <div class="guide-item__text">You can start swapping as soon as you have ETH available! Press &lsquo;Select
+                  a
+                  token&rsquo; and enter the token address or search for it on the tokens list.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__top">
+            <div class="logo footer__logo">
+              <div class="logo__link">
+                <img src="images/img-logo.png" alt="logo" width="56" height="56" class="logo__img">
+              </div>
+            </div>
+            <nav class="footer__nav">
+              <ul class="menu-list footer__menu-list">
+                <li class="menu-list__item">
+                  <a href="#com" class="menu-list__link">Community</a>
+                </li>
+                <li class="menu-list__item">
+                  <a href="whitepaper.pdf" class="menu-list__link">Whitepaper</a>
+                </li>
+              </ul>
+              <div class="links-list links-list--small footer__links-list">
+                <a target="_blank" href="https://t.me/dogelonmars" class="links-list__link">
+                  <img src="images/list-links-tg.svg" alt="img" width="40" height="40" class="links-list__icon">
+                </a>
+                <a target="_blank" href="https://twitter.com/dogelonmars" class="links-list__link">
+                  <img src="images/list-links-tw.svg" alt="img" width="40" height="40" class="links-list__icon">
+                </a>
+                <a target="_blank" href="https://coinmarketcap.com/currencies/dogelon/" class="links-list__link">
+                  <img src="images/list-links-03.svg" alt="img" width="40" height="40" class="links-list__icon">
+                </a>
+                <a target="_blank" href="https://www.coingecko.com/en/coins/dogelon-mars" class="links-list__link">
+                  <img src="images/list-links-coingecko.png" alt="img" width="40" height="40" class="links-list__icon">
+                </a>
+                <a target="_blank" href="https://app.uniswap.org/#/swap?inputCurrency=eth&amp;outputCurrency=0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3" class="links-list__link">
+                  <img src="images/list-links-uniswap.svg" alt="img" width="40" height="40" class="links-list__icon">
+                </a>
+                <a target="_blank" href="https://etherscan.io/token/0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3" class="links-list__link">
+                  <img src="images/list-links-traced.svg" alt="img" width="40" height="40" class="links-list__icon">
+                </a>
+              </div>
+            </nav>
+          </div>
+          <div class="footer__bottom">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/9125-js-swiper.js" defer></script>
+  <script src="js/9173-js-main.js" defer></script>
+  <script src="js/1320-js-scrolltoanchor.js"></script>
+</body>
+
+</html>
